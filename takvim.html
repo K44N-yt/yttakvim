@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K44N - YouTube Video Takvimi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 1200px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        th {
+            padding: 20px 25px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        th:first-child {
+            width: 25%;
+        }
+
+        th:last-child {
+            width: 75%;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+            transform: translateX(5px);
+            box-shadow: 5px 0 15px rgba(102, 126, 234, 0.1);
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tbody tr:nth-child(even):hover {
+            background: linear-gradient(135deg, #f0f4ff, #e0ecff);
+        }
+
+        td {
+            padding: 18px 25px;
+            vertical-align: middle;
+            font-size: 0.95em;
+        }
+
+        .date-cell {
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .date-cell::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .date-cell {
+            padding-left: 35px;
+        }
+
+        .title-cell {
+            color: #34495e;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .day-name {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .month-separator {
+            background: linear-gradient(135deg, #3498db, #2980b9) !important;
+            color: white !important;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.1em;
+        }
+
+        .month-separator td {
+            padding: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            th, td {
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+
+            .date-cell {
+                padding-left: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>K44N</h1>
+            <p>YouTube Video Takvimi (Haziran - Ekim 2025)</p>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Video Başlığı</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="month-separator">
+                        <td colspan="2">HAZİRAN 2025</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">21 Haz 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Etik Hacking Nedir? Temelleriyle Anlatım</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">25 Haz 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Siber Güvenlik Kariyerine Nasıl Başlanır?</td>
+                    </tr>
+                    
+                    <tr class="month-separator">
+                        <td colspan="2">TEMMUZ 2025</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">9 Tem 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Pentest Nedir? Aşamalarıyla Rehber</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">12 Tem 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">White Box, Black Box, Gray Box Pentest</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">16 Tem 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Hacktivizm, Exploit & Bug Bounty Nedir?</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">19 Tem 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Kali Linux Nedir? Ne İşe Yarar?</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">23 Tem 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">En İyi Pentest Linux Dağıtımları</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">26 Tem 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Hack Lab Kurulumu (Sanal Makine)</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">30 Tem 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Aktif & Pasif Bilgi Toplama Teknikleri</td>
+                    </tr>
+                    
+                    <tr class="month-separator">
+                        <td colspan="2">AĞUSTOS 2025</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">2 Ağu 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Google Dork ile Açık Bulma</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">6 Ağu 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">DNS, Traceroute, Reverse IP ile Keşif</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">9 Ağu 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">OSINT Araçları (Whois, Shodan, Netcraft)</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">13 Ağu 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Kriptoloji Nedir? Şifrelemenin Temelleri</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">16 Ağu 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Simetrik & Asimetrik Şifreleme Farkı</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">20 Ağu 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">AES, RSA, SHA Karşılaştırması</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">23 Ağu 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">MD5 & SHA1 Hashleme</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">27 Ağu 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Brute Force & Rainbow Table</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">30 Ağu 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Steganografi Nedir?</td>
+                    </tr>
+                    
+                    <tr class="month-separator">
+                        <td colspan="2">EYLÜL 2025</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">3 Eyl 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Dosya Yükleme Açıkları Nasıl Tespit Edilir?</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">6 Eyl 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Nmap ile Port & Servis Tespiti</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">10 Eyl 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Zenmap ile Görsel Tarama</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">13 Eyl 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Wireshark ile Ağ Trafiği İnceleme</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">17 Eyl 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">HTTP & SSH Tünelleme Nedir?</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">20 Eyl 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Man in The Middle Saldırıları</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">24 Eyl 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">XSS Açığı Nedir? Reflected, Stored, DOM</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">27 Eyl 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">XSS ile Oturum Çalma</td>
+                    </tr>
+                    
+                    <tr class="month-separator">
+                        <td colspan="2">EKİM 2025</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">1 Eki 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">CSRF Nedir?</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">4 Eki 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">SQL Injection ile Veritabanı Sızması</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">8 Eki 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">LFI & RFI Açıkları</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">11 Eki 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">IDOR Açığı ile Yetkisiz Erişim</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">15 Eki 2025<br><span class="day-name">Çarşamba</span></td>
+                        <td class="title-cell">Zero-Day Nedir?</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">18 Eki 2025<br><span class="day-name">Cumartesi</span></td>
+                        <td class="title-cell">Sosyal Mühendislik Nasıl İşler?</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
